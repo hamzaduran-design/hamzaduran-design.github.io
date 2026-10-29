@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Hamza Duran, game and level designer working in Unreal Engine 5. Portfolio and CV.">
+<meta property="og:title" content="Hamza Duran Portfolio">
+<meta property="og:description" content="Game and level designer, Unreal Engine 5.">
+<meta property="og:image" content="assets/dc_hero.jpg">
+<style>*,*::before,*::after{box-sizing:border-box}html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Hamza Duran Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&family=Nunito:wght@400;600&family=Baloo+2:wght@500;700&family=Special+Elite&family=IM+Fell+English+SC&family=Pirata+One&family=EB+Garamond:wght@400;600&family=Press+Start+2P&family=Pixelify+Sans:wght@400;500&family=Caveat:wght@600;700&family=Patrick+Hand&family=Cinzel:wght@600;700&display=swap">
+<style>
+/* Layout: a formal header, then one full-width band per project, newest first; each band has its own world (palette, type, buttons, ambient motion). Deliberately single-look: every color is set per band. */
+:root {
+  color-scheme: dark;
+  --ink: #15171c; --paper: #f2f0eb; --gray: #8b909a; --line: #2a2e36;
+  --ui: "IBM Plex Mono", Consolas, monospace;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --title: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --grid: #f1ede4; --gink: #1b2230; --gblue: #2e568c;
+}
+body { background: var(--ink); color: var(--paper); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+.in { max-width: 1080px; margin: 0 auto; padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { margin: 0; text-wrap: balance; font-weight: 600; }
+p { margin: 0; }
+img, video { max-width: 100%; display: block; }
+a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+#site[data-lang="en"] .tr, #site[data-lang="tr"] .en { display: none !important; }
+
+/* ---------- header: level designer's graph paper ---------- */
+.top { padding-block: 64px 44px; color: var(--gink); background-color: var(--grid);
+  background-image: linear-gradient(rgba(46,86,140,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(46,86,140,.10) 1px, transparent 1px), linear-gradient(rgba(46,86,140,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(46,86,140,.22) 1px, transparent 1px);
+  background-size: 16px 16px, 16px 16px, 80px 80px, 80px 80px; }
+.top .in { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 36px; align-items: center; }
+.top .ph { width: 170px; height: 170px; object-fit: cover; border: 3px solid var(--gink); box-shadow: 8px 8px 0 var(--gblue); background: #fff; }
+.top .name { font-family: var(--title); font-weight: 800; font-size: clamp(54px, 9vw, 96px); line-height: .88; text-transform: uppercase; letter-spacing: .01em; }
+.top .role { font-family: var(--ui); font-size: 14px; text-transform: uppercase; letter-spacing: .08em; color: var(--gblue); margin-top: 12px; }
+.top .intro { color: #39404d; max-width: 64ch; margin-top: 14px; font-size: 17px; }
+.top .bar { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-top: 22px; }
+.btn-top { font-family: var(--ui); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: var(--grid); background: var(--gink); text-decoration: none; padding: 10px 18px; box-shadow: 4px 4px 0 var(--gblue); transition: transform .15s, box-shadow .15s; }
+.btn-top:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--gblue); }
+.btn-top.alt { background: transparent; color: var(--gink); border: 2px solid var(--gink); padding: 8px 16px; }
+.mail { color: #39404d; font: 14px var(--ui); user-select: all; }
+.lang { margin-left: auto; display: inline-flex; border: 2px solid var(--gink); }
+.lang button { font: 500 12px var(--ui); color: var(--gink); background: none; border: 0; padding: 6px 12px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--gink); color: var(--grid); }
+.toc { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 26px; font: 12px var(--ui); text-transform: uppercase; letter-spacing: .06em; }
+.toc a { color: var(--gink); text-decoration: none; border-bottom: 1px dashed rgba(27,34,48,.4); } .toc a:hover { color: var(--gblue); border-color: var(--gblue); }
+.toc span { color: #9aa0aa; }
+@media (max-width: 640px) { .top .in { grid-template-columns: 1fr; } .top .ph { width: 120px; height: 120px; } .lang { margin-left: 0; } }
+
+/* ---------- shared band structure ---------- */
+.band { position: relative; overflow: hidden; padding-block: 88px 96px; }
+.band > .in { position: relative; z-index: 2; display: grid; gap: 30px; }
+.head { display: grid; gap: 8px; }
+.meta { font-size: 15px; opacity: .85; }
+.sum { font-size: 19px; max-width: 64ch; }
+.row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px; align-items: start; }
+.row .c { display: grid; gap: 8px; min-width: 0; }
+.row h3 { font-size: 22px; }
+.row figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
+.row figure img, .row figure video { width: 100%; }
+figcaption { font-size: 13px; opacity: .8; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.duo > figure { margin: 0; display: grid; gap: 6px; }
+.hero-img { width: 100%; max-height: 560px; object-fit: cover; }
+.acts { display: flex; flex-wrap: wrap; gap: 14px; }
+.amb { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+@media (max-width: 760px) { .row { grid-template-columns: 1fr; gap: 14px; } .band { padding-block: 64px 72px; } }
+
+/* ---------- DEEPCLEAN: underwater ---------- */
+.dc { background: linear-gradient(180deg, #0f6d86 0%, #0a4f6a 45%, #082f45 100%); color: #eafcff; font-family: "Baloo 2", var(--body); }
+.dc h2 { font-family: "Baloo 2", var(--ui); font-weight: 700; font-size: clamp(48px, 8vw, 92px); line-height: .9; letter-spacing: .02em; color: #fff; text-shadow: 0 4px 0 #06364c; }
+.dc .meta { color: #9ee6f2; }
+.dc .row h3 { color: #ffd65a; font-family: "Baloo 2"; font-size: 26px; }
+.dc .row p { color: #d4f3f8; font-family: "Nunito", var(--body); }
+.dc .sum { font-family: "Nunito", var(--body); }
+.dc figure img, .dc figure video, .dc .hero-img { border-radius: 18px; box-shadow: 0 14px 30px rgba(0,20,30,.45); }
+.bub-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 26px; border-radius: 999px; background: radial-gradient(circle at 30% 30%, #fff 0 6%, #8ff0ff 7%, #2bb7d1 70%); color: #053346; font: 700 17px "Baloo 2", var(--ui); text-decoration: none; box-shadow: inset 0 -4px 0 rgba(0,0,0,.18), 0 8px 18px rgba(0,30,45,.4); transition: transform .2s; }
+.bub-btn:hover { transform: translateY(-3px) scale(1.03); }
+.caustic { background: repeating-radial-gradient(circle at 20% 10%, rgba(255,255,255,.07) 0 2px, transparent 2px 40px), repeating-radial-gradient(circle at 80% 0%, rgba(255,255,255,.05) 0 3px, transparent 3px 55px); animation: drift 18s linear infinite alternate; }
+@keyframes drift { to { background-position: 120px 60px, -90px 40px; } }
+.bub { position: absolute; bottom: -40px; border-radius: 50%; border: 2px solid rgba(220,250,255,.55); background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.7) 0 12%, rgba(255,255,255,.08) 30%); animation: rise linear infinite; }
+@keyframes rise { 0% { transform: translate(0, 0); opacity: 0; } 10% { opacity: 1; } 50% { transform: translate(14px, -55vh); } 100% { transform: translate(-10px, -120vh); opacity: 0; } }
+
+/* ---------- PANDORA: dark train ---------- */
+.pd { background-color: #1a0f0b; color: #e9d7bd; font-family: "Special Elite", var(--body);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='110' viewBox='0 0 80 110'%3E%3Cg fill='none' stroke='%233a2117' stroke-width='2'%3E%3Cpath d='M40 8c10 14 22 18 22 34S48 66 40 78C32 66 18 58 18 42S30 22 40 8z'/%3E%3Ccircle cx='40' cy='44' r='6'/%3E%3Cpath d='M40 78v24M28 96c4-6 20-6 24 0'/%3E%3C/g%3E%3C/svg%3E"); }
+.pd h2 { font-family: "IM Fell English SC", Georgia, serif; font-size: clamp(44px, 7vw, 80px); color: #f6c46e; animation: flicker 6s infinite; }
+@keyframes flicker { 0%, 100% { text-shadow: 0 0 18px rgba(246,170,60,.55); opacity: 1; } 47% { opacity: 1; } 48% { opacity: .55; text-shadow: none; } 49% { opacity: 1; } 51% { opacity: .7; } 52% { opacity: 1; text-shadow: 0 0 22px rgba(246,170,60,.7); } }
+.pd .meta { color: #b99b78; }
+.pd .row h3 { font-family: "IM Fell English SC", Georgia, serif; font-size: 27px; color: #f6c46e; }
+.pd .row p, .pd .sum { color: #dcc6a6; }
+.pd figure img, .pd figure video { border: 6px solid #2b1a12; outline: 1px solid #6b4a2c; }
+.torch { background: radial-gradient(circle 300px at var(--mx, 50%) var(--my, 30%), rgba(255,200,120,.10), rgba(8,4,2,.55) 70%); transition: background .05s; }
+.ticket { position: relative; display: inline-block; padding: 12px 30px; background: #e9cf9b; color: #3a1d10; font: 18px "Special Elite", monospace; text-decoration: none; letter-spacing: .04em;
+  -webkit-mask: radial-gradient(circle 9px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 9px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
+          mask: radial-gradient(circle 9px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 9px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat; }
+.ticket::after { content: ""; position: absolute; top: 6px; bottom: 6px; right: 46px; border-left: 2px dashed #b08a55; }
+.ticket:hover { background: #f6c46e; }
+
+/* ---------- BRIDE'S: butcher / library ---------- */
+.bn { background: radial-gradient(ellipse at 20% 0%, #3b1418 0%, #1c0b0d 55%, #120708 100%); color: #ead9c6; font-family: "EB Garamond", Georgia, serif; }
+.bn h2 { font-family: "Pirata One", Georgia, serif; font-size: clamp(50px, 8vw, 96px); font-weight: 400; color: #f1e3cf; line-height: .95; }
+.bn h2 .amp { color: #b3262e; }
+.bn .meta { color: #c4a58a; font-size: 17px; }
+.bn .sum, .bn .row p { font-size: 20px; color: #e3d0bb; }
+.bn .row h3 { font-family: "Pirata One", Georgia, serif; font-weight: 400; font-size: 32px; color: #f1e3cf; }
+.paper { background: #efe3cc; padding: 10px 10px 14px; box-shadow: 0 10px 24px rgba(0,0,0,.5); position: relative; }
+.paper::before { content: ""; position: absolute; top: -10px; left: 50%; width: 90px; height: 22px; transform: translateX(-50%) rotate(-3deg); background: rgba(225,210,170,.75); }
+.paper figcaption { color: #4a2b20; font-family: "EB Garamond", serif; font-size: 16px; opacity: 1; }
+.quad { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.quad img { aspect-ratio: 16 / 10; object-fit: cover; }
+.tag-btn { position: relative; display: inline-block; padding: 10px 26px 10px 40px; background: #d9c39d; color: #3b1418; font: 600 19px "EB Garamond", serif; text-decoration: none; clip-path: polygon(16px 0, 100% 0, 100% 100%, 16px 100%, 0 50%); }
+.tag-btn::before { content: ""; position: absolute; left: 18px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: #1c0b0d; }
+.tag-btn:hover { background: #ead6b0; }
+.drip { background: linear-gradient(#5a0d12, #5a0d12) top / 100% 6px no-repeat; }
+.drop { position: absolute; top: 0; width: 6px; border-radius: 0 0 4px 4px; background: #5a0d12; animation: drip 7s ease-in infinite; }
+@keyframes drip { 0% { height: 6px; } 70% { height: 46px; } 100% { height: 6px; } }
+
+/* ---------- MAN THE DAN: pixel ---------- */
+.md { background: #4ec7f0; color: #10243a; font-family: "Pixelify Sans", var(--body); font-size: 18px; image-rendering: pixelated; }
+.md h2 { font-family: "Press Start 2P", monospace; font-size: clamp(26px, 4.5vw, 48px); line-height: 1.25; color: #fff; text-shadow: 4px 4px 0 #10243a; }
+.md .meta { font-weight: 600; color: #123a5c; }
+.md .sum { color: #0e2033; }
+.md .row h3 { font-family: "Press Start 2P", monospace; font-size: 15px; line-height: 1.6; color: #10243a; }
+.md .row p { color: #10314d; }
+.md figure img { border: 4px solid #10243a; box-shadow: 6px 6px 0 #10243a; }
+.md figcaption { color: #10243a; font-weight: 600; }
+.px-btn { display: inline-block; padding: 12px 20px; font: 12px "Press Start 2P", monospace; color: #fff; background: #e8473d; text-decoration: none; box-shadow: inset -4px -4px 0 #a52a22, inset 4px 4px 0 #ff7a6e, 0 4px 0 #10243a; }
+.px-btn:hover { transform: translateY(2px); box-shadow: inset -4px -4px 0 #a52a22, inset 4px 4px 0 #ff7a6e, 0 2px 0 #10243a; }
+.hearts { display: flex; gap: 6px; }
+.ground { position: absolute; left: 0; right: 0; bottom: 0; height: 26px; background: repeating-linear-gradient(90deg, #7a4b2a 0 16px, #8a5a34 16px 32px); border-top: 8px solid #5bbf3a; }
+.cloud { position: absolute; width: 8px; height: 8px; background: transparent; color: #fff;
+  box-shadow: 16px 0, 24px 0, 32px 0, 8px 8px, 16px 8px, 24px 8px, 32px 8px, 40px 8px, 0 16px, 8px 16px, 16px 16px, 24px 16px, 32px 16px, 40px 16px, 48px 16px;
+  animation: float-x linear infinite; transform: scale(2.4); }
+@keyframes float-x { from { left: -140px; } to { left: 105%; } }
+
+/* ---------- ARAYIS: childhood memories ---------- */
+.ar { background-color: #c8a87b; color: #2f2215; font-family: "Patrick Hand", var(--body); font-size: 19px;
+  background-image: radial-gradient(rgba(90,60,30,.10) 1px, transparent 1.5px), radial-gradient(rgba(255,255,255,.12) 1px, transparent 1.5px); background-size: 7px 7px, 11px 11px; }
+.ar h2 { font-family: "Caveat", cursive; font-size: clamp(60px, 9vw, 104px); line-height: .9; color: #2f2215; }
+.ar .meta { color: #4a3520; font-weight: 600; }
+.ar .sum { font-size: 19px; }
+.pencils { height: 14px; background: linear-gradient(90deg, #e2b43c 0 16%, #e44a3a 16% 32%, #3a6fd0 32% 48%, #3e9b46 48% 64%, #f1d64b 64% 80%, #2b2b2b 80% 100%); background-size: 200% 100%; animation: roll 12s linear infinite; border-radius: 0 7px 7px 0; }
+@keyframes roll { to { background-position: -200% 0; } }
+.polas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; padding: 10px 6px; }
+.pola { margin: 0; background: #fbf8f1; padding: 12px 12px 16px; box-shadow: 0 10px 22px rgba(60,40,20,.35); display: grid; gap: 10px; transition: transform .25s; }
+.pola:nth-child(1) { transform: rotate(-2.2deg); } .pola:nth-child(2) { transform: rotate(1.8deg); }
+.pola-wide { transform: rotate(-1deg); max-width: 760px; }
+.pola-wide img { aspect-ratio: auto; }
+.pola:hover { transform: rotate(0) scale(1.02); }
+.pola img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.pola figcaption { font: 600 24px "Caveat", cursive; color: #3b2a19; opacity: 1; }
+.badge { display: inline-flex; align-items: center; gap: 10px; font: 700 30px "Caveat", cursive; color: #a3241c; border: 3px solid #a3241c; padding: 2px 16px; border-radius: 8px; transform: rotate(-3deg); width: fit-content; }
+.note-btn { display: inline-block; font: 700 26px "Caveat", cursive; color: #2f2215; text-decoration: none; background: #f4e27a; padding: 6px 22px; box-shadow: 0 6px 12px rgba(60,40,20,.3); transform: rotate(-1.5deg); }
+.note-btn:hover { transform: rotate(0); }
+@media (max-width: 640px) { .polas { grid-template-columns: 1fr; } }
+
+/* ---------- CHRONO: parchment ---------- */
+.cd { background: radial-gradient(ellipse at 50% 30%, #f1e2bf, #d8bf8c 75%, #b99b62); color: #3b2a12; font-family: "EB Garamond", Georgia, serif; }
+.cd .in { grid-template-columns: minmax(0, 1fr) 160px !important; align-items: center; }
+.cd h2 { font-family: "Cinzel", Georgia, serif; font-size: clamp(34px, 5vw, 56px); color: #4a2c0e; }
+.cd .meta { color: #6b4a22; font-size: 17px; }
+.cd .sum { font-size: 21px; }
+.seal-btn { display: inline-block; font: 700 15px "Cinzel", serif; letter-spacing: .06em; color: #f6e7c4; background: #7a2416; padding: 12px 22px; border-radius: 3px; text-decoration: none; box-shadow: 0 0 0 3px #d8bf8c, 0 0 0 5px #7a2416; }
+.seal-btn:hover { background: #942c1b; }
+.scene { width: 120px; height: 120px; perspective: 600px; justify-self: center; }
+.die { width: 80px; height: 80px; position: relative; transform-style: preserve-3d; animation: spin 14s linear infinite; margin: 20px; }
+.die i { position: absolute; inset: 0; background: #fbf4e2; border: 2px solid #7a5a2c; border-radius: 12px; }
+.die i:nth-child(1) { transform: translateZ(40px); background-image: radial-gradient(circle, #3b2a12 7px, transparent 8px); }
+.die i:nth-child(2) { transform: rotateY(180deg) translateZ(40px); background-image: radial-gradient(circle at 28% 28%, #3b2a12 6px, transparent 7px), radial-gradient(circle at 72% 72%, #3b2a12 6px, transparent 7px); }
+.die i:nth-child(3) { transform: rotateY(90deg) translateZ(40px); background-image: radial-gradient(circle at 25% 25%, #3b2a12 6px, transparent 7px), radial-gradient(circle, #3b2a12 6px, transparent 7px), radial-gradient(circle at 75% 75%, #3b2a12 6px, transparent 7px); }
+.die i:nth-child(4) { transform: rotateY(-90deg) translateZ(40px); background-image: radial-gradient(circle at 28% 28%, #3b2a12 6px, transparent 7px), radial-gradient(circle at 72% 28%, #3b2a12 6px, transparent 7px), radial-gradient(circle at 28% 72%, #3b2a12 6px, transparent 7px), radial-gradient(circle at 72% 72%, #3b2a12 6px, transparent 7px); }
+.die i:nth-child(5) { transform: rotateX(90deg) translateZ(40px); }
+.die i:nth-child(6) { transform: rotateX(-90deg) translateZ(40px); }
+@keyframes spin { to { transform: rotateX(360deg) rotateY(720deg); } }
+@media (max-width: 640px) { .cd .in { grid-template-columns: 1fr !important; } }
+
+/* ---------- footer ---------- */
+.foot { padding-block: 48px; }
+.foot .in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--gray); font: 13px var(--ui); text-transform: uppercase; letter-spacing: .05em; }
+.foot a { color: #c9ccd3; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } video { display: none; } .still { display: block !important; } }
+.still { display: none; }
+</style>
+</head>
+<body>
+
+<div id="site" data-lang="en">
+
+<header class="top">
+  <div class="in">
+    <img class="ph" src="assets/foto.jpg" alt="Hamza Duran">
+    <div>
+      <h1 class="name">Hamza Duran</h1>
+      <div class="role"><span class="en">Game &amp; Level Designer · Unreal Engine 5</span><span class="tr">Oyun ve Seviye Tasarımcısı · Unreal Engine 5</span></div>
+      <p class="intro"><span class="en">I am a third-year Digital Game Design student at Istanbul Esenyurt University. I design gameplay systems and levels, and build them in Unreal Engine 5 with Blueprint. In team projects, I have also taken on the responsibility of leading the team. My projects are listed below, starting with the most recent.</span><span class="tr">İstanbul Esenyurt Üniversitesi Dijital Oyun Tasarımı bölümünde 3. sınıf öğrencisiyim. Oynanış sistemleri ve seviyeler tasarlıyor, bunları Unreal Engine 5'te Blueprint ile hayata geçiriyorum. Ekip projelerinde ekibi yönetme sorumluluğunu da üstlendim. Projelerimi aşağıda, en yeniden başlayarak inceleyebilirsiniz.</span></p>
+      <div class="bar">
+        <a class="btn-top" href="cv.html"><span class="en">CV</span><span class="tr">Özgeçmiş</span></a>
+        <a class="btn-top alt" href="https://www.linkedin.com/in/hamza-duran" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="mail">hamzaduran2002@gmail.com</span>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" id="b-en" aria-pressed="true">EN</button>
+          <button type="button" id="b-tr" aria-pressed="false">TR</button>
+        </div>
+      </div>
+      <nav class="toc" aria-label="Projects">
+        <a href="#deepclean">DEEPCLEAN</a><span>/</span><a href="#pandora">Pandora Express</a><span>/</span><a href="#manthedan">Man the Dan</a><span>/</span><a href="#brides">Bride's Nightmare</a><span>/</span><a href="#arayis">Arayış</a><span>/</span><a href="#chrono">Chrono Dominion</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ================= DEEPCLEAN ================= -->
+<section class="band dc" id="deepclean">
+  <div class="amb caustic"></div>
+  <div class="amb" id="bubbles"></div>
+  <div class="in">
+    <div class="head">
+      <h2>DEEPCLEAN</h2>
+      <div class="meta"><span class="en">Solo project · Unreal Engine 5.8 · In development · July 2026 – present</span><span class="tr">Bireysel proje · Unreal Engine 5.8 · Geliştirme sürüyor · Temmuz 2026 – devam</span></div>
+    </div>
+    <p class="sum"><span class="en">A first-person, relaxing underwater game about cleaning the seabed and restoring its ecosystem. It is my most comprehensive project: I designed the game in detail on paper first, then built it in Unreal.</span><span class="tr">Deniz tabanını temizleyip ekosistemi yeniden canlandırmaya dayanan, birinci şahıs ve rahatlatıcı bir sualtı oyunu. Bugüne kadarki en kapsamlı projem: oyunu önce kâğıt üzerinde ayrıntılı olarak tasarladım, ardından Unreal'da kurdum.</span></p>
+    <img class="hero-img" src="assets/dc_hero.jpg" alt="DEEPCLEAN underwater scene with a sunken boat and coral">
+    <div class="row">
+      <div class="c"><h3><span class="en">Vacuum and trash physics</span><span class="tr">Vakum ve çöp fiziği</span></h3><p><span class="en">I built the vacuum system and more than 2,000 physics-based trash objects in Blueprint. As the player collects trash, the seabed gradually clears.</span><span class="tr">Vakum sistemini ve 2.000'i aşkın fizik tabanlı çöp nesnesini Blueprint ile kurdum. Oyuncu çöpleri topladıkça deniz tabanı yavaş yavaş temizleniyor.</span></p></div>
+      <figure><video src="assets/dc_vacuum.mp4" poster="assets/dc_vacuum_poster.jpg" autoplay muted loop playsinline></video><img class="still" src="assets/dc_vacuum_poster.jpg" alt=""><figcaption><span class="en">In-game capture</span><span class="tr">Oyun içi kayıt</span></figcaption></figure>
+    </div>
+    <div class="row">
+      <div class="c"><h3><span class="en">Life returns as you clean</span><span class="tr">Temizlendikçe geri dönen yaşam</span></h3><p><span class="en">Coral, plants and color return to cleaned areas. The same location in the early gray-box pass and with the life layer.</span><span class="tr">Temizlenen alanlara mercan, bitki ve renk geri dönüyor. Aynı nokta, ilk gri kutu aşamasında ve yaşam katmanıyla.</span></p></div>
+      <div class="duo">
+        <figure><img src="assets/dc_life_before.jpg" alt="Seabed before the life layer"><figcaption><span class="en">Before</span><span class="tr">Önce</span></figcaption></figure>
+        <figure><img src="assets/dc_life_after.jpg" alt="Same seabed with coral and plants"><figcaption><span class="en">After</span><span class="tr">Sonra</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="c"><h3><span class="en">Design document</span><span class="tr">Tasarım belgesi</span></h3><p><span class="en">A design document of more than 150 pages defines the core loop, economy, progression and the layout of the first area. The blockout follows this plan.</span><span class="tr">150 sayfayı aşan tasarım belgesi çekirdek döngüyü, ekonomiyi, ilerlemeyi ve ilk alanın yerleşimini tanımlıyor. Blockout bu plana göre hazırlandı.</span></p></div>
+      <figure><img src="assets/dc_map.jpg" alt="Top-down plan of the first area" style="max-height:460px;object-fit:contain;background:#e9e1cf"><figcaption><span class="en">First area plan</span><span class="tr">İlk alanın planı</span></figcaption></figure>
+    </div>
+    <div class="acts"><a class="bub-btn" href="https://drive.google.com/file/d/1aImaKNDj019BaXrj8JuDJQYOvuT-Eku5/view?usp=sharing" target="_blank" rel="noopener">▶ <span class="en">Watch the trailer</span><span class="tr">Fragmanı izle</span></a></div>
+  </div>
+</section>
+
+<!-- ================= PANDORA ================= -->
+<section class="band pd" id="pandora">
+  <div class="amb torch" id="torch"></div>
+  <div class="in">
+    <div class="head">
+      <h2>Pandora Express</h2>
+      <div class="meta"><span class="en">Solo project · Course project · Horror prototype · February – April 2026</span><span class="tr">Bireysel proje · Ders projesi · Korku prototipi · Şubat – Nisan 2026</span></div>
+    </div>
+    <p class="sum"><span class="en">A horror prototype set on a dark train. Building on the systems work from my team projects, here I also designed the levels myself: fog and lighting create tension in confined spaces, while lights, sounds and cables guide the player through the dark.</span><span class="tr">Karanlık bir trende geçen korku prototipi. Ekip projelerindeki sistem deneyimimin üzerine, bu projede seviyeleri de kendim tasarladım: sis ve ışık dar mekânlarda gerilim yaratırken ışıklar, sesler ve kablolar oyuncuya karanlıkta yol gösteriyor.</span></p>
+    <div class="row">
+      <div class="c"><h3><span class="en">An enemy that hunts the player</span><span class="tr">Oyuncuyu avlayan düşman</span></h3><p><span class="en">The enemy patrols the level and responds to the player's footsteps. When the flashlight is turned on, it locates the player from anywhere on the map.</span><span class="tr">Düşman seviyede devriye geziyor ve oyuncunun ayak seslerine tepki veriyor. El feneri açıldığında oyuncunun yerini haritanın her noktasından tespit ediyor.</span></p></div>
+      <figure><video src="assets/pandora_chase.mp4" poster="assets/pandora_chase_poster.jpg" autoplay muted loop playsinline></video><img class="still" src="assets/pandora_chase_poster.jpg" alt=""><figcaption><span class="en">Debug view: the green capsule marks the enemy.</span><span class="tr">Hata ayıklama görünümü: yeşil kapsül düşmanı gösteriyor.</span></figcaption></figure>
+    </div>
+    <div class="row">
+      <div class="c"><h3><span class="en">Environmental puzzles</span><span class="tr">Çevresel bulmacalar</span></h3><p><span class="en">Every object in the room can be inspected; the correct ones reveal the digits of the door code.</span><span class="tr">Odadaki her nesne incelenebiliyor; doğru nesneler kapı şifresinin rakamlarını veriyor.</span></p></div>
+      <figure><img src="assets/pandora_board.jpg" alt="Chalkboard clue next to an interaction prompt"><figcaption><span class="en">In-game</span><span class="tr">Oyun içi</span></figcaption></figure>
+    </div>
+    <div class="row">
+      <div class="c"><h3><span class="en">Quick-time events</span><span class="tr">Anlık tepki (QTE) sistemi</span></h3><p><span class="en">Selecting the wrong object triggers a QTE: the object is pulled toward the camera, the screen shakes, and the player presses Q repeatedly to fill the bar before it empties. The radial bar is built as a material.</span><span class="tr">Yanlış nesne seçildiğinde QTE başlıyor: nesne kameraya doğru çekiliyor, ekran sarsılıyor ve oyuncu bar boşalmadan Q tuşuna art arda basarak onu dolduruyor. Dairesel bar bir materyal olarak hazırlandı.</span></p></div>
+      <div style="display:grid;gap:12px;min-width:0">
+        <figure><video src="assets/pandora_qte.mp4" poster="assets/pandora_qte_poster.jpg" autoplay muted loop playsinline></video><img class="still" src="assets/pandora_qte_poster.jpg" alt=""><figcaption><span class="en">QTE in game</span><span class="tr">Oyun içinde QTE</span></figcaption></figure>
+        <figure><img src="assets/pandora_radialbar.jpg" alt="Material graph of the radial QTE bar"><figcaption><span class="en">Radial bar material</span><span class="tr">Dairesel bar materyali</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="acts"><a class="ticket" href="https://drive.google.com/file/d/1o-KbIk5cbwd7lE4LeCD2Xht29feVXec5/view?usp=sharing" target="_blank" rel="noopener"><span class="en">Watch gameplay</span><span class="tr">Oynanışı izle</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▶</a></div>
+  </div>
+</section>
+
+<!-- ================= MAN THE DAN ================= -->
+<section class="band md" id="manthedan">
+  <div class="amb" id="clouds"></div>
+  <div class="ground"></div>
+  <div class="in">
+    <div class="head">
+      <div class="hearts" aria-hidden="true">
+        <svg width="28" height="24" viewBox="0 0 7 6" shape-rendering="crispEdges"><path fill="#e8473d" d="M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z"/></svg>
+        <svg width="28" height="24" viewBox="0 0 7 6" shape-rendering="crispEdges"><path fill="#e8473d" d="M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z"/></svg>
+        <svg width="28" height="24" viewBox="0 0 7 6" shape-rendering="crispEdges"><path fill="#e8473d" d="M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z"/></svg>
+      </div>
+      <h2>MAN THE DAN</h2>
+      <div class="meta"><span class="en">Team of 3 · Course project · 2D mobile action · November 2025 – January 2026</span><span class="tr">3 kişilik ekip · Ders projesi · 2D mobil aksiyon · Kasım 2025 – Ocak 2026</span></div>
+    </div>
+    <p class="sum"><span class="en">My first steps in Blueprint were in Diamond Rush, our game jam prototype. In Man the Dan, I applied them to a complete game. The project received the highest grade in our class.</span><span class="tr">Blueprint'teki ilk adımlarımı game jam prototipimiz Diamond Rush'ta attım. Man the Dan'de bu birikimi eksiksiz bir oyuna taşıdım. Proje sınıfın en yüksek notunu aldı.</span></p>
+    <figure style="margin:0"><img src="assets/mtd_1.jpg" alt="Man the Dan pixel art level with touch controls" style="border:4px solid #10243a;box-shadow:6px 6px 0 #10243a;width:100%"></figure>
+    <div class="row">
+      <div class="c"><h3><span class="en">Gameplay systems in Blueprint</span><span class="tr">Blueprint ile oynanış sistemleri</span></h3><p><span class="en">Player movement and combat, health and damage, enemy waves and the loot chest.</span><span class="tr">Oyuncu hareketi ve dövüş, can ve hasar, düşman dalgaları ve ödül sandığı.</span></p></div>
+      <div class="duo">
+        <figure><img src="assets/mtd_bp_player.jpg" alt="Player Blueprint graph"><figcaption><span class="en">Player Blueprint</span><span class="tr">Oyuncu Blueprint'i</span></figcaption></figure>
+        <figure><img src="assets/mtd_bp_arena.jpg" alt="Enemy wave manager Blueprint"><figcaption><span class="en">Enemy wave manager</span><span class="tr">Düşman dalgası yöneticisi</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="c"><h3><span class="en">Touch controls and Android build</span><span class="tr">Dokunmatik kontroller ve Android</span></h3><p><span class="en">On-screen joystick and buttons, attack hitboxes, and the Android build.</span><span class="tr">Ekran joystick'i ve butonlar, saldırı vuruş alanları ve Android sürümü.</span></p></div>
+      <figure><img src="assets/mtd_hitbox.jpg" alt="Attack hitboxes and touch joysticks in a test level"><figcaption><span class="en">Hitbox and touch input test</span><span class="tr">Vuruş alanı ve dokunmatik giriş testi</span></figcaption></figure>
+    </div>
+    <div class="acts" style="margin-bottom:20px"><a class="px-btn" href="https://github.com/yigitgul286-debug/ManTheDan" target="_blank" rel="noopener"><span class="en">GITHUB (TEAM)</span><span class="tr">GITHUB (EKİP)</span> ▶</a></div>
+  </div>
+</section>
+
+<!-- ================= BRIDE'S ================= -->
+<section class="band bn" id="brides">
+  <div class="amb drip" id="drips"></div>
+  <div class="in">
+    <div class="head">
+      <h2>Bride<span class="amp">'</span>s Nightmare</h2>
+      <div class="meta"><span class="en">Team of 3 · Course project · Survival horror · February – May 2025</span><span class="tr">3 kişilik ekip · Ders projesi · Hayatta kalma korku · Şubat – Mayıs 2025</span></div>
+    </div>
+    <p class="sum"><span class="en">A survival horror game. I defined the layout and contents of the rooms and created the props that fill them. The simple objects from my first game jam developed into detailed, fully textured models in this project.</span><span class="tr">Hayatta kalma türünde bir korku oyunu. Odaların kurgusunu ve içeriğini belirledim, onları dolduran objeleri ürettim. İlk game jam'imdeki basit objeler bu projede ayrıntılı ve tamamen kaplanmış modellere dönüştü.</span></p>
+    <div class="row">
+      <div class="c"><h3><span class="en">Detailed props</span><span class="tr">Ayrıntılı sahne objeleri</span></h3><p><span class="en">Modeled in Maya and textured in Substance Painter: the butcher's counter, stone fireplace, payphone and laundry cart, among others.</span><span class="tr">Maya'da modellenip Substance Painter'da kaplandı: kasap tezgâhı, taş şömine, ankesörlü telefon, çamaşır sepeti ve diğerleri.</span></p></div>
+      <div class="paper"><div class="quad"><img src="assets/bn_somine.jpg" alt="Stone fireplace"><img src="assets/bn_tezgah.jpg" alt="Butcher's counter"><img src="assets/bn_telefon.jpg" alt="Payphone"><img src="assets/bn_sepet.jpg" alt="Laundry cart"></div></div>
+    </div>
+    <div class="row">
+      <div class="c"><h3><span class="en">From model to texture</span><span class="tr">Modelden dokuya</span></h3><p><span class="en">Each prop followed the same pipeline: modeling and UVs in Maya, then texturing. I also created the textures for the library and the laundry room.</span><span class="tr">Her obje aynı süreçten geçti: Maya'da modelleme ve UV açma, ardından kaplama. Kütüphane ve çamaşırhanenin dokularını da ben hazırladım.</span></p></div>
+      <div class="duo">
+        <figure class="paper"><img src="assets/bn_maya.jpg" alt="Prop being modeled in Maya"><figcaption><span class="en">Modeling in Maya</span><span class="tr">Maya'da modelleme</span></figcaption></figure>
+        <figure class="paper"><img src="assets/bn_merdiven.jpg" alt="Textured library staircase"><figcaption><span class="en">Library staircase</span><span class="tr">Kütüphane merdiveni</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="c"><h3><span class="en">In the game</span><span class="tr">Oyun içinde</span></h3><p><span class="en">The fireplace room in the final build.</span><span class="tr">Oyunun son sürümünde şömineli oda.</span></p></div>
+      <figure class="paper"><img src="assets/bn_ingame.jpg" alt="Dark room with a red armchair and the fireplace"></figure>
+    </div>
+    <div class="acts"><a class="tag-btn" href="https://drive.google.com/file/d/1uVGI_A8OO26VOEg66BO9by4OphDSGS1O/view?usp=sharing" target="_blank" rel="noopener"><span class="en">Watch gameplay</span><span class="tr">Oynanışı izle</span></a></div>
+  </div>
+</section>
+
+<!-- ================= ARAYIS ================= -->
+<section class="band ar" id="arayis">
+  <div class="in">
+    <div class="pencils" aria-hidden="true"></div>
+    <div class="head">
+      <h2>Arayış</h2>
+      <div class="meta"><span class="en">Team of 3 · University game jam · April 2025</span><span class="tr">3 kişilik ekip · Üniversite game jam'i · Nisan 2025</span></div>
+      <div class="badge"><span class="en">1st place</span><span class="tr">Birincilik</span></div>
+    </div>
+    <p class="sum"><span class="en">Our first game jam, in which we won first place while competing with upper-year students. I developed the main idea and modeled the childhood objects at the center of the story; this is where my 3D modeling work began.</span><span class="tr">Üst sınıflarla yarıştığımız ilk game jam'imizde birinci olduk. Oyunun ana fikrini geliştirdim ve hikâyenin merkezindeki çocukluk eşyalarını modelledim; 3B modelleme çalışmalarım bu projeyle başladı.</span></p>
+    <figure class="pola pola-wide"><img src="assets/ar_odul.jpg" alt="Award ceremony of the university game jam"><figcaption><span class="en">Award ceremony, Istanbul Esenyurt University Game Jam 2025</span><span class="tr">Ödül töreni, İstanbul Esenyurt Üniversitesi Game Jam 2025</span></figcaption></figure>
+    <div class="polas">
+      <figure class="pola"><img src="assets/ar_kalem.jpg" alt="Colored pencil platforms"></figure>
+      <figure class="pola"><img src="assets/ar_col.jpg" alt="Desert level with a giant block letter"></figure>
+    </div>
+    <div class="acts"><a class="note-btn" href="https://drive.google.com/file/d/1-NIq9b0lwgWQA3O1ne2KnyP1FFTVgHRh/view?usp=drive_link" target="_blank" rel="noopener"><span class="en">Watch gameplay →</span><span class="tr">Oynanışı izle →</span></a></div>
+  </div>
+</section>
+
+<!-- ================= CHRONO ================= -->
+<section class="band cd" id="chrono">
+  <div class="in">
+    <div style="display:grid;gap:18px;min-width:0">
+      <div class="head">
+        <h2>Chrono Dominion</h2>
+        <div class="meta"><span class="en">Solo project · Board game · Fall 2024</span><span class="tr">Bireysel proje · Kutu oyunu · Güz 2024</span></div>
+      </div>
+      <p class="sum"><span class="en">A strategy board game for which I designed the economy: population, resource production, dice-based trade and warfare. My first work in systems design.</span><span class="tr">Ekonomisini tasarladığım bir strateji kutu oyunu: nüfus, kaynak üretimi, zara dayalı ticaret ve savaş. Sistem tasarımındaki ilk çalışmam.</span></p>
+      <div class="acts"><a class="seal-btn" href="https://drive.google.com/file/d/1aqxZS2mm43qHTqYNl5oSylQJ-jP2Lp_p/view?usp=sharing" target="_blank" rel="noopener"><span class="en">Read the game document</span><span class="tr">Oyun belgesini incele</span></a></div>
+    </div>
+    <div class="scene" aria-hidden="true"><div class="die"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  </div>
+</section>
+
+<footer class="foot"><div class="in"><span>Hamza Duran · İstanbul</span><span>hamzaduran2002@gmail.com · <a href="https://www.linkedin.com/in/hamza-duran" target="_blank" rel="noopener">LinkedIn</a></span></div></footer>
+</div>
+
+<script>
+(function () {
+  var site = document.getElementById('site');
+  function setLang(l) {
+    site.dataset.lang = l;
+    document.getElementById('b-en').setAttribute('aria-pressed', l === 'en');
+    document.getElementById('b-tr').setAttribute('aria-pressed', l === 'tr');
+    try { localStorage.setItem('hd-lang', l); } catch (e) {}
+  }
+  var start = 'en';
+  try { start = localStorage.getItem('hd-lang') || 'en'; } catch (e) {}
+  if (location.hash === '#tr') start = 'tr'; else if (location.hash === '#en') start = 'en';
+  setLang(start);
+  document.getElementById('b-en').onclick = function () { setLang('en'); };
+  document.getElementById('b-tr').onclick = function () { setLang('tr'); };
+  window.addEventListener('hashchange', function () { if (location.hash === '#tr' || location.hash === '#en') setLang(location.hash.slice(1)); });
+
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // bubbles
+  var b = document.getElementById('bubbles');
+  for (var i = 0; i < 18; i++) { var s = document.createElement('i'); s.className = 'bub'; var d = 8 + Math.random() * 26;
+    s.style.cssText = 'left:' + (Math.random() * 100) + '%;width:' + d + 'px;height:' + d + 'px;animation-duration:' + (9 + Math.random() * 12) + 's;animation-delay:' + (-Math.random() * 20) + 's'; b.appendChild(s); }
+  // pixel clouds
+  var c = document.getElementById('clouds');
+  [[12, 46, -4], [30, 62, -30], [6, 80, -55], [22, 54, -12]].forEach(function (p) { var k = document.createElement('i'); k.className = 'cloud';
+    k.style.cssText = 'top:' + p[0] + '%;animation-duration:' + p[1] + 's;animation-delay:' + p[2] + 's'; c.appendChild(k); });
+  // blood drips
+  var dr = document.getElementById('drips');
+  for (var j = 0; j < 9; j++) { var q = document.createElement('i'); q.className = 'drop';
+    q.style.cssText = 'left:' + (6 + j * 11 + Math.random() * 5) + '%;animation-delay:' + (-Math.random() * 7) + 's;animation-duration:' + (6 + Math.random() * 4) + 's'; dr.appendChild(q); }
+  // flashlight follows the pointer in Pandora
+  var pd = document.getElementById('pandora'), t = document.getElementById('torch');
+  if (!still) pd.addEventListener('pointermove', function (e) { var r = pd.getBoundingClientRect();
+    t.style.setProperty('--mx', (e.clientX - r.left) + 'px'); t.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+})();
+</script>
+
+</body>
+</html>

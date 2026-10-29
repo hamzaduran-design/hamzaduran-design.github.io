@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hamza Duran CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an A4-proportioned sheet on a dark desk; dark header band, warm-gray sidebar on the left, main column on the right. Single fixed look. */
+:root {
+  color-scheme: dark;
+  --desk: #1b2230; --sheet: #fffdf8; --band: #1b2230; --side: #f1ede4; --ink: #1b2230; --muted: #5a6170; --rule: #c9ccd2; --accent: #2e568c;
+  --ui: "IBM Plex Mono", Consolas, monospace; --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; --title: "Big Shoulders Display", "Arial Narrow", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--desk); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; padding-block: 28px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+#cv[data-lang="en"] .tr, #cv[data-lang="tr"] .en { display: none !important; }
+.tools { max-width: 900px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.tools a, .tools button { font: 500 12px var(--ui); text-transform: uppercase; letter-spacing: .06em; color: #e8eaee; text-decoration: none; border: 1px solid #4a505c; background: none; padding: 7px 14px; border-radius: 4px; cursor: pointer; }
+.tools a:hover { border-color: #e8eaee; }
+.lang { margin-left: auto; display: inline-flex; }
+.lang button { border-radius: 0; } .lang button:first-child { border-radius: 4px 0 0 4px; } .lang button:last-child { border-radius: 0 4px 4px 0; border-left: 0; }
+.lang button[aria-pressed="true"] { background: #e8eaee; color: var(--desk); }
+a:focus-visible, button:focus-visible { outline: 2px solid #9fc0e8; outline-offset: 3px; }
+
+.sheet { max-width: 900px; margin: 0 auto; background: var(--sheet); display: grid; grid-template-columns: 270px minmax(0, 1fr); grid-template-rows: auto 1fr; box-shadow: 0 20px 50px rgba(0,0,0,.45); }
+.band { grid-column: 1 / -1; background-color: var(--band); background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 16px 16px; color: #fff; display: grid; grid-template-columns: 270px minmax(0, 1fr); align-items: end; }
+.band .pic { display: grid; justify-items: center; padding-top: 26px; position: relative; }
+.band .pic img { width: 156px; height: 156px; border-radius: 50%; object-fit: cover; object-position: 50% 50%; border: 5px solid var(--side); margin-bottom: -60px; position: relative; z-index: 2; background: var(--side); }
+.band .nm { padding: 34px 36px 30px; }
+.band h1 { margin: 0; font: 800 54px/.9 var(--title); text-transform: uppercase; letter-spacing: .01em; }
+.band .role { margin-top: 10px; font: 400 13px var(--ui); text-transform: uppercase; letter-spacing: .08em; color: #9fbbe0; }
+.side { background: var(--side); padding: 78px 26px 36px; display: grid; gap: 26px; align-content: start; }
+.side h2, .main h2 { margin: 0 0 10px; font: 500 13px var(--ui); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.main h2::before { content: ""; display: inline-block; width: 9px; height: 9px; background: var(--accent); margin-right: 9px; vertical-align: 1px; }
+.side h2 { text-align: center; }
+.side p { margin: 0; }
+.contact { display: grid; gap: 4px; text-align: center; font-size: 14px; }
+.contact a { color: var(--ink); }
+.edu { display: grid; gap: 2px; text-align: center; font-size: 14px; }
+.edu b { font-weight: 700; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.tags span { font-size: 13px; background: #fff; border: 1px solid var(--ink); padding: 2px 8px; box-shadow: 2px 2px 0 rgba(46,86,140,.35); }
+.grp { display: grid; gap: 8px; }
+.grp + .grp { margin-top: 10px; }
+.grp h3 { margin: 0; font: 400 11px var(--ui); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); text-align: center; }
+.main { padding: 34px 36px 36px; display: grid; gap: 24px; align-content: start; }
+.main h2 { border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+.sec { display: grid; gap: 12px; }
+.item { display: grid; gap: 2px; }
+.item .t { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.item .t b { font: 800 21px/1.1 var(--title); text-transform: uppercase; letter-spacing: .02em; }
+.item .t i { font-style: normal; color: var(--muted); font: 12px var(--ui); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.item .k { color: var(--muted); font-size: 13.5px; }
+.item p { margin: 2px 0 0; }
+.item a { color: var(--accent); font-weight: 600; font-size: 13.5px; text-decoration: none; }
+.lead { margin: 0; }
+@media (max-width: 760px) {
+  .sheet, .band { grid-template-columns: 1fr; }
+  .band .pic img { margin-bottom: 0; width: 120px; height: 120px; }
+  .band .nm { text-align: center; padding: 16px 20px 24px; }
+  .side { padding-top: 28px; }
+  .main { padding: 28px 20px; }
+  .item .t { flex-direction: column; gap: 0; }
+}
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: #fff; padding: 0; }
+  .tools { display: none; }
+  .sheet { box-shadow: none; max-width: none; min-height: 297mm; }
+}
+</style>
+</head>
+<body>
+<div id="cv" data-lang="en">
+  <div class="tools">
+    <a href="index.html">← <span class="en">Portfolio</span><span class="tr">Portfolyo</span></a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="b-en" aria-pressed="true">EN</button><button type="button" id="b-tr" aria-pressed="false">TR</button>
+    </div>
+  </div>
+
+  <article class="sheet">
+    <header class="band">
+      <div class="pic"><img src="assets/cv_foto.jpg" alt="Muhammet Hamza Duran"></div>
+      <div class="nm">
+        <h1>Muhammet Hamza Duran</h1>
+        <div class="role"><span class="en">Junior Game &amp; Level Designer · Unreal Engine 5</span><span class="tr">Junior Oyun ve Seviye Tasarımcısı · Unreal Engine 5</span></div>
+      </div>
+    </header>
+
+    <aside class="side">
+      <section>
+        <h2><span class="en">Contact</span><span class="tr">İletişim</span></h2>
+        <div class="contact">
+          <span>hamzaduran2002@gmail.com</span>
+          <span><span class="en">Istanbul, Türkiye</span><span class="tr">İstanbul, Türkiye</span></span>
+          <a href="https://www.linkedin.com/in/hamza-duran" target="_blank" rel="noopener">linkedin.com/in/hamza-duran</a>
+          <a href="index.html"><span class="en">Portfolio</span><span class="tr">Portfolyo</span></a>
+        </div>
+      </section>
+      <section>
+        <h2><span class="en">Education</span><span class="tr">Eğitim</span></h2>
+        <div class="edu">
+          <b>İstanbul Esenyurt <span class="en">University</span><span class="tr">Üniversitesi</span></b>
+          <span><span class="en">Digital Game Design (B.A.)</span><span class="tr">Dijital Oyun Tasarımı (Lisans)</span></span>
+          <span>2024 – 2028 · <span class="en">3rd year</span><span class="tr">3. sınıf</span></span>
+          <span><span class="en">GPA</span><span class="tr">GNO</span> 3.45 / 4.00</span>
+        </div>
+      </section>
+      <section>
+        <h2><span class="en">Skills</span><span class="tr">Yetenekler</span></h2>
+        <div class="grp">
+          <h3><span class="en">Design</span><span class="tr">Tasarım</span></h3>
+          <div class="tags"><span class="en">Game design</span><span class="tr">Oyun tasarımı</span><span class="en">Level design</span><span class="tr">Seviye tasarımı</span><span class="en">Systems design</span><span class="tr">Sistem tasarımı</span><span class="en">Blockout</span><span class="tr">Blockout</span><span class="en">Lighting &amp; atmosphere</span><span class="tr">Işık ve atmosfer</span><span class="en">GDD writing</span><span class="tr">Tasarım belgesi</span></div>
+        </div>
+        <div class="grp">
+          <h3><span class="en">Development</span><span class="tr">Geliştirme</span></h3>
+          <div class="tags"><span>Unreal Engine 5</span><span>Blueprint</span><span class="en">Enemy AI</span><span class="tr">Düşman AI</span><span>Sequencer</span><span class="en">Android export</span><span class="tr">Android export</span></div>
+        </div>
+        <div class="grp">
+          <h3><span class="en">3D &amp; media</span><span class="tr">3B ve medya</span></h3>
+          <div class="tags"><span>Maya</span><span>Substance Painter</span><span>Premiere Pro</span><span>Photoshop</span></div>
+        </div>
+      </section>
+      <section>
+        <h2><span class="en">Awards</span><span class="tr">Ödüller</span></h2>
+        <div class="edu">
+          <b><span class="en">1st Place</span><span class="tr">Birincilik</span></b>
+          <span><span class="en">Istanbul Esenyurt University Game Jam, April 2025</span><span class="tr">İstanbul Esenyurt Üniversitesi Game Jam, Nisan 2025</span></span>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main">
+      <section class="sec">
+        <h2><span class="en">Profile</span><span class="tr">Hakkımda</span></h2>
+        <p class="lead"><span class="en">Third-year Digital Game Design student focused on game and level design in Unreal Engine 5. I design gameplay systems and levels and build them with Blueprint; when a project requires it, I also model and texture props in Maya and Substance Painter. In team projects, I have also taken on the responsibility of leading the team.</span><span class="tr">Unreal Engine 5 ile oyun ve seviye tasarımına odaklanan Dijital Oyun Tasarımı 3. sınıf öğrencisiyim. Oynanış sistemleri ve seviyeler tasarlıyor, bunları Blueprint ile kuruyorum; proje gerektirdiğinde Maya ve Substance Painter ile obje modelleme ve kaplama da yapıyorum. Ekip projelerinde ekibi yönetme sorumluluğunu da üstlendim.</span></p>
+      </section>
+
+      <section class="sec">
+        <h2><span class="en">Projects</span><span class="tr">Projeler</span></h2>
+        <div class="item">
+          <div class="t"><b lang="en">DEEPCLEAN</b><i><span class="en">Jul 2026 – present</span><span class="tr">Tem 2026 – devam</span></i></div>
+          <div class="k"><span class="en">Solo · Unreal Engine 5.8 · In development</span><span class="tr">Bireysel · Unreal Engine 5.8 · Geliştirme sürüyor</span></div>
+          <p><span class="en">First-person underwater restoration game. Wrote a design document of 150+ pages covering the core loop, economy and progression; built the first area's blockout with 2,000+ physics-based trash objects and a life layer that returns as areas are cleaned; developed the vacuum, sand, mud and kelp systems in Blueprint.</span><span class="tr">Birinci şahıs sualtı restorasyon oyunu. Çekirdek döngü, ekonomi ve ilerlemeyi kapsayan 150 sayfayı aşan tasarım belgesini hazırladım; ilk alanın blockout'unu 2.000'i aşkın fizik tabanlı çöp nesnesi ve temizlendikçe canlanan yaşam katmanıyla kurdum; vakum, kum, çamur ve yosun sistemlerini Blueprint ile geliştirdim.</span></p>
+        </div>
+        <div class="item">
+          <div class="t"><b lang="en">Pandora Express</b><i><span class="en">Feb – Apr 2026</span><span class="tr">Şub – Nis 2026</span></i></div>
+          <div class="k"><span class="en">Solo · Course project · Horror</span><span class="tr">Bireysel · Ders projesi · Korku</span></div>
+          <p><span class="en">Horror prototype set on a train. Designed the levels with fog, lighting and environmental guidance; built an enemy that responds to the player's footsteps and flashlight, an object-based code puzzle and a QTE system in Blueprint.</span><span class="tr">Trende geçen korku prototipi. Seviyeleri sis, ışık ve çevresel yönlendirmeyle tasarladım; oyuncunun ayak seslerine ve el fenerine tepki veren düşmanı, nesnelere dayalı şifre bulmacasını ve QTE sistemini Blueprint ile kurdum.</span></p>
+        </div>
+        <div class="item">
+          <div class="t"><b lang="en">Man the Dan</b><i><span class="en">Nov 2025 – Jan 2026</span><span class="tr">Kas 2025 – Oca 2026</span></i></div>
+          <div class="k"><span class="en">Team of 3 · Course project · 2D mobile action · Highest grade in class</span><span class="tr">3 kişilik ekip · Ders projesi · 2D mobil aksiyon · Sınıfın en yüksek notu</span></div>
+          <p><span class="en">Learned Blueprint on this project, starting from our jam prototype Diamond Rush. Built touch controls, health and damage, wave-based enemies and the loot chest, and delivered the Android build.</span><span class="tr">Blueprint'i game jam prototipimiz Diamond Rush'tan başlayarak bu projede öğrendim. Dokunmatik kontrolleri, can ve hasar sistemini, dalgalar hâlinde gelen düşmanları ve sandık sistemini kurdum, Android sürümünü çıkardım.</span></p>
+        </div>
+        <div class="item">
+          <div class="t"><b lang="en">Bride's Nightmare</b><i><span class="en">Feb – May 2025</span><span class="tr">Şub – May 2025</span></i></div>
+          <div class="k"><span class="en">Team of 3 · Course project · Survival horror</span><span class="tr">3 kişilik ekip · Ders projesi · Hayatta kalma korku</span></div>
+          <p><span class="en">Defined the layout and contents of the rooms. Modeled detailed props in Maya and textured them in Substance Painter, including the butcher's counter, fireplace, payphone and laundry cart; created the library and laundry room textures.</span><span class="tr">Odaların kurgusunu ve içeriğini belirledim. Kasap tezgâhı, şömine, ankesörlü telefon ve çamaşır sepeti gibi ayrıntılı objeleri Maya'da modelleyip Substance Painter'da kapladım; kütüphane ve çamaşırhanenin dokularını hazırladım.</span></p>
+        </div>
+        <div class="item">
+          <div class="t"><b>Arayış</b><i><span class="en">Apr 2025</span><span class="tr">Nis 2025</span></i></div>
+          <div class="k"><span class="en">Team of 3 · University game jam · 1st place</span><span class="tr">3 kişilik ekip · Üniversite game jam'i · Birincilik</span></div>
+          <p><span class="en">Story-driven jam game. Developed the main idea and modeled the childhood objects at the center of the story.</span><span class="tr">Hikâye odaklı jam oyunu. Ana fikri geliştirdim ve hikâyenin merkezindeki çocukluk eşyalarını modelledim.</span></p>
+        </div>
+        <div class="item">
+          <div class="t"><b lang="en">Chrono Dominion</b><i><span class="en">Fall 2024</span><span class="tr">Güz 2024</span></i></div>
+          <div class="k"><span class="en">Solo · Board game</span><span class="tr">Bireysel · Kutu oyunu</span></div>
+          <p><span class="en">Strategy board game; designed the economy of population, resource production, dice-based trade and warfare.</span><span class="tr">Strateji kutu oyunu; nüfus, kaynak üretimi, zara dayalı ticaret ve savaştan oluşan ekonomiyi tasarladım.</span></p>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2><span class="en">Experience</span><span class="tr">Deneyim</span></h2>
+        <div class="item">
+          <div class="t"><b><span class="en">Video Editor &amp; Content Producer</span><span class="tr">Video Editörü ve İçerik Üreticisi</span></b><i><span class="en">2024 – present</span><span class="tr">2024 – devam</span></i></div>
+          <div class="k"><span class="en">News Agency · Part-time, remote</span><span class="tr">Haber Ajansı · Yarı zamanlı, uzaktan</span></div>
+          <p><span class="en">Edit daily news videos for social media and write their copy; shoot on location with camera, microphone and drone.</span><span class="tr">Sosyal medya için günlük haber videolarını kurguluyor ve metinlerini yazıyorum; kamera, mikrofon ve drone ile sahada çekim yapıyorum.</span></p>
+        </div>
+        <div class="item">
+          <div class="t"><b><span class="en">E-commerce &amp; Digital Marketing</span><span class="tr">E-Ticaret ve Dijital Pazarlama</span></b><i>2023 – 2024</i></div>
+          <div class="k"><span class="en">Freelance</span><span class="tr">Serbest</span></div>
+          <p><span class="en">Set up and ran my own online store, managing its advertising and sales; supported a digital marketing agency with advertising and market analysis.</span><span class="tr">Kendi e-ticaret mağazamı kurup reklam ve satışlarını yönettim; bir dijital pazarlama ajansına reklam ve pazar analizi desteği verdim.</span></p>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2><span class="en">Activities</span><span class="tr">Etkinlikler</span></h2>
+        <p class="lead"><span class="en">Deep Jam 2026 (GameDevIst) training program and game jam participant.</span><span class="tr">Deep Jam 2026 (GameDevIst) eğitim programı ve game jam'i katılımcısı.</span></p>
+      </section>
+    </main>
+  </article>
+</div>
+<script>
+(function () {
+  var cv = document.getElementById('cv');
+  function setLang(l) { cv.dataset.lang = l; document.documentElement.lang = l;
+    document.getElementById('b-en').setAttribute('aria-pressed', l === 'en'); document.getElementById('b-tr').setAttribute('aria-pressed', l === 'tr');
+    try { localStorage.setItem('hd-lang', l); } catch (e) {} }
+  var s = 'en'; try { s = localStorage.getItem('hd-lang') || 'en'; } catch (e) {}
+  if (location.hash === '#tr') s = 'tr'; else if (location.hash === '#en') s = 'en';
+  setLang(s);
+  document.getElementById('b-en').onclick = function () { setLang('en'); };
+  document.getElementById('b-tr').onclick = function () { setLang('tr'); };
+})();
+</script>
+</body>
+</html>
